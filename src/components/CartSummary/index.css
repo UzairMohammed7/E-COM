@@ -1,0 +1,30 @@
+.cart-summary-container {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  width: 30%;
+}
+.rupees-text {
+  font-size: 16px;
+  color: #616e7c;
+}
+.rupees {
+  font-size: 22px;
+}
+.cart-list-count {
+  margin-top: 0;
+}
+.checkout-btn {
+  font-family: 'Poppins', sans-serif ;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 16px;
+  color: #ffffff;
+  background-color: #0967d2;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  margin-bottom: 20px;
+}
