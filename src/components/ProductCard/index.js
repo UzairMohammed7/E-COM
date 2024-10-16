@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom'
+import { MdOutlineStar } from "react-icons/md";
 
 import './index.css'
 
@@ -14,13 +15,9 @@ const ProductCard = props => {
         <p className="brand">by {brand}</p>
         <div className="product-details">
           <p className="price">Rs {price}/-</p>
-          <div className="rating-container">
+          <div className="rating-container bg-gradient-to-r from-blue-600 to-emerald-600">
             <p className="rating">{rating}</p>
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/star-img.png"
-              alt="star"
-              className="star"
-            />
+            <MdOutlineStar color='white' size={20} />
           </div>
         </div>
       </Link>

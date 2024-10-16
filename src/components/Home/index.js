@@ -22,7 +22,7 @@ const Home = () => (
           in your own way.
         </p>
         <Link to="/products">
-          <button type="button" className="shop-now-button">
+          <button type="button" className="shop-now-button bg-gradient-to-r from-blue-400 to-emerald-500">
             Shop Now
           </button>
         </Link>

@@ -74,16 +74,21 @@
   color: #64748b;
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
+  transition: 0.3s;
 }
 
 @media screen and (min-width: 768px) {
   .category-name {
     font-size: 18px;
+
+    &:hover{
+      font-size: 19px;
+    }
   }
 }
 
 .active-category-name {
-  color: #0967d2;
+  color: #4270ee;
 }
 
 .rating-heading {
@@ -104,6 +109,11 @@
   align-items: center;
   margin-bottom: 12px;
   cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .rating-img {
@@ -152,6 +162,13 @@
   margin-top: 16px;
   outline: none;
   cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #0967d2;
+    color: #ffffff;
+  }
+
 }
 
 @media screen and (min-width: 768px) {

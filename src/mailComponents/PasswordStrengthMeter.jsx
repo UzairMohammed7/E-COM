@@ -7,8 +7,7 @@ const PasswordCriteria = ({ password }) => {
     {label: "At least one uppercase letter", condition: /[A-Z]/.test(password)},
     {label: "At least one lowercase letter", condition: /[a-z]/.test(password)},
     {label: "At least one number", condition:  /\d/.test(password)},
-	{ label: "At least one special character", condition: /[^A-Za-z0-9]/.test(password) },
-    // {label: "At least one special character (!@#$%^&*)", condition: /[!@#$%^&*]/.test(password)},
+	  {label: "At least one special character", condition: /[^A-Za-z0-9]/.test(password) },
   ];
 
   return (
@@ -92,8 +91,8 @@ const PasswordStrengthMeter = ({ password }) => {
           <div
             key={index}
             className={`h-1 w-1/4 rounded-full transition-colors duration-300 
-        ${index < strength ? getColor(strength) : "bg-gray-600"}
-      `}
+            ${index < strength ? getColor(strength) : "bg-gray-600"}
+        `}
           />
         ))}
       </div>

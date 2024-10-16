@@ -1,6 +1,7 @@
 .nav-header {
   display: flex;
   justify-content: center;
+  align-items: center;
   border-bottom: 1px solid rgb(243, 243, 243);
 }
 
@@ -29,6 +30,7 @@
 
 .nav-bar-mobile-logo-container {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
 }
@@ -54,12 +56,14 @@
 }
 
 .website-logo {
-  width: 110px;
+  width: 90px;
+  height: 70px;
 }
 
 @media screen and (min-width: 768px) {
   .website-logo {
-    width: 165px;
+    width: 110px;
+    height: 80px;
   }
 }
 
@@ -67,7 +71,6 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  align-self: flex-end;
   flex: 1;
   list-style-type: none;
   margin-top: 0px;
@@ -95,7 +98,6 @@
   justify-content: space-around;
   align-items: center;
   height: 70px;
-  background-color: #e6f6ff;
   flex: 1;
   list-style-type: none;
   margin-top: 0px;

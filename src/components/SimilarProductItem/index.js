@@ -1,3 +1,4 @@
+import { MdOutlineStar } from 'react-icons/md'
 import './index.css'
 
 const SimilarProductItem = props => {
@@ -15,13 +16,9 @@ const SimilarProductItem = props => {
       <p className="similar-products-brand">by {brand}</p>
       <div className="similar-product-price-rating-container">
         <p className="similar-product-price">Rs {price}/-</p>
-        <div className="similar-product-rating-container">
+        <div className="similar-product-rating-container bg-gradient-to-r from-blue-600 to-emerald-500 ">
           <p className="similar-product-rating">{rating}</p>
-          <img
-            src="https://assets.ccbp.in/frontend/react-js/star-img.png"
-            alt="star"
-            className="similar-product-star"
-          />
+          <MdOutlineStar color="white" />
         </div>
       </div>
     </li>

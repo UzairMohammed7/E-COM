@@ -2,6 +2,8 @@ import {Component} from 'react'
 import {Route, Routes, Navigate} from 'react-router-dom'
 
 import LoginForm from './components/LoginForm'
+import SignUpPage from './components/SignUpPage'
+
 import Home from './components/Home'
 import Products from './components/Products'
 import ProductItemDetails from './components/ProductItemDetails'
@@ -9,8 +11,18 @@ import Cart from './components/Cart'
 import NotFound from './components/NotFound'
 import ProtectedRoute from './components/ProtectedRoute'
 import CartContext from './context/CartContext'
+// import { useAuthStore } from './store/authStore'
 
 import './App.css'
+
+// // redirect authenticated users to the home page
+// const RedirectAuthenticatedUser = ({ children }) => {
+// 	const { isAuthenticated, user } = useAuthStore();
+// 	if (isAuthenticated && user.isVerified) {
+// 		return <Navigate to='/' replace />;
+// 	}
+// 	return children;
+// };
 
 class App extends Component {
   state = {
@@ -101,6 +113,8 @@ class App extends Component {
       >
         <Routes>
           <Route path="/login" element={<LoginForm/>} />
+          {/* <Route path="/signup" element={<RedirectAuthenticatedUser><SignUpPage/></RedirectAuthenticatedUser>} /> */}
+          <Route path="/signup" element={<SignUpPage/> } />
           <Route path="/" element={<ProtectedRoute><Home/></ProtectedRoute> } />
           <Route path="/products" element={ <ProtectedRoute><Products/></ProtectedRoute>  } />
           <Route path="/products/:id" element={ <ProtectedRoute><ProductItemDetails/></ProtectedRoute> }/>

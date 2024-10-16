@@ -3,6 +3,7 @@ import {Link, useParams} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import {Circles} from 'react-loader-spinner'
 import {BsPlusSquare, BsDashSquare} from 'react-icons/bs'
+import { MdOutlineStar } from "react-icons/md";
 
 import CartContext from '../../context/CartContext'
 
@@ -144,13 +145,9 @@ class ProductItemDetails extends Component {
                 <h1 className="product-name">{title}</h1>
                 <p className="price-details">Rs {price}/-</p>
                 <div className="rating-and-reviews-count">
-                  <div className="rating-container">
+                  <div className="rating-container bg-gradient-to-r from-blue-600 to-emerald-500 ">
                     <p className="rating">{rating}</p>
-                    <img
-                      src="https://assets.ccbp.in/frontend/react-js/star-img.png"
-                      alt="star"
-                      className="star"
-                    />
+                    <MdOutlineStar color='white' size={20} />
                   </div>
                   <p className="reviews-count">{totalReviews} Reviews</p>
                 </div>
@@ -171,7 +168,7 @@ class ProductItemDetails extends Component {
                     onClick={this.onDecrementQuantity}
                     data-testid="minus"
                   >
-                    <BsDashSquare className="quantity-controller-icon" />.
+                    <BsDashSquare className="quantity-controller-icon" />
                   </button>
                   <p className="quantity">{quantity}</p>
                   <button
@@ -180,12 +177,12 @@ class ProductItemDetails extends Component {
                     onClick={this.onIncrementQuantity}
                     data-testid="plus"
                   >
-                    <BsPlusSquare className="quantity-controller-icon" />.
+                    <BsPlusSquare className="quantity-controller-icon" />
                   </button>
                 </div>
                 <button
                   type="button"
-                  className="button add-to-cart-btn"
+                  className="button add-to-cart-btn bg-gradient-to-r from-blue-600 to-emerald-500 "
                   onClick={onClickAddToCart}
                 >
                   ADD TO CART

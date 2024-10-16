@@ -1,14 +1,22 @@
 import {Link} from 'react-router-dom'
 import Cookies from 'js-cookie'
+// import { useAuthStore } from "../store/authStore";
+import cartLogo from '../../cartlogo.png';
+// import { House } from "lucide-react";
+import { MdHome, MdShoppingCart, MdLogout } from "react-icons/md";
+import { RiHandCoinFill } from "react-icons/ri";
 
 import CartContext from '../../context/CartContext'
 
 import './index.css'
 
 const Header = () => {
+  // const {logout } = useAuthStore();
+  
   const onClickLogout = () => {
       // const {history} = props
       Cookies.remove('jwt_token')
+      // logout();
       // history.replace('/login')
       window.location.replace('/login');
   }
@@ -36,8 +44,8 @@ const Header = () => {
         <div className="nav-bar-mobile-logo-container">
           <Link to="/">
             <img
+              src={cartLogo}
               className="website-logo"
-              src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
               alt="website logo"
             />
           </Link>
@@ -47,19 +55,15 @@ const Header = () => {
             className="nav-mobile-btn"
             onClick={onClickLogout}
           >
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-log-out-img.png"
-              alt="nav logout"
-              className="nav-bar-img"
-            />
+            <MdLogout size={25} color='green'/>
           </button>
         </div>
 
         <div className="nav-bar-large-container">
           <Link to="/">
             <img
+              src={cartLogo}
               className="website-logo"
-              src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
               alt="website logo"
             />
           </Link>
@@ -85,41 +89,30 @@ const Header = () => {
           </ul>
           <button
             type="button"
-            className="logout-desktop-btn"
+            className="logout-desktop-btn bg-gradient-to-r from-blue-400 to-emerald-500"
             onClick={onClickLogout}
           >
             Logout
           </button>
         </div>
       </div>
-      <div className="nav-menu-mobile">
+
+      <div className="nav-menu-mobile bg-gradient-to-r from-blue-200 to-emerald-200">
         <ul className="nav-menu-list-mobile">
           <li className="nav-menu-item-mobile">
             <Link to="/" className="nav-link">
-              <img
-                src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-home-icon.png"
-                alt="nav home"
-                className="nav-bar-img"
-              />
+            <MdHome size={30} />
             </Link>
           </li>
 
           <li className="nav-menu-item-mobile">
             <Link to="/products" className="nav-link">
-              <img
-                src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-products-icon.png"
-                alt="nav products"
-                className="nav-bar-img"
-              />
+            <RiHandCoinFill size={30} />
             </Link>
           </li>
           <li className="nav-menu-item-mobile">
             <Link to="/cart" className="nav-link">
-              <img
-                src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-cart-icon.png"
-                alt="nav cart"
-                className="nav-bar-img"
-              />
+            <MdShoppingCart size={30} />
               {renderCartItemsCount()}
             </Link>
           </li>

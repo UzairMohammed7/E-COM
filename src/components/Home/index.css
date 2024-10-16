@@ -99,6 +99,7 @@
   margin-top: 20px;
   cursor: pointer;
   outline: none;
+  width: 110px;
 }
 
 @media screen and (min-width: 768px) {

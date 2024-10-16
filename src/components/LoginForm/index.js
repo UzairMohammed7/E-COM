@@ -1,6 +1,10 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {Navigate} from 'react-router-dom'
+import { Mail, Lock } from "lucide-react";
+import Input from "../../mailComponents/Input";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import './index.css'
 
@@ -47,45 +51,50 @@ class LoginForm extends Component {
     }
   }
 
-  renderPasswordField = () => {
-    const {password} = this.state
-
-    return (
-      <>
-        <label className="input-label" htmlFor="password">
-          PASSWORD
-        </label>
-        <input
-          type="password"
-          id="password"
-          className="password-input-field"
-          value={password}
-          onChange={this.onChangePassword}
-          placeholder="Password"
-        />
-      </>
-    )
-  }
-
   renderUsernameField = () => {
     const {username} = this.state
 
     return (
       <>
-        <label className="input-label" htmlFor="username">
+        {/* <label className="input-label" htmlFor="username">
           USERNAME
-        </label>
-        <input
-          type="text"
-          id="username"
-          className="username-input-field"
-          value={username}
-          onChange={this.onChangeUsername}
-          placeholder="Username"
-        />
+        </label> */}
+        <Input
+					id="email"
+					name="email"
+          required={true}
+					icon={Mail}
+					type='text'
+					placeholder='email address'
+					value={username}
+					onChange={this.onChangeUsername}
+					/>
       </>
     )
   }
+
+  renderPasswordField = () => {
+    const {password} = this.state
+
+    return (
+      <>
+        {/* <label className="input-label" htmlFor="password">
+          PASSWORD
+        </label> */}
+        <Input
+					id="password"
+					name="password"
+          required={true}
+					icon={Lock}
+					type='password'
+					placeholder='Password'
+					value={password}
+					onChange={this.onChangePassword}
+					/>
+      </>
+    )
+  }
+
 
   render() {
     const {showSubmitError, errorMsg} = this.state
@@ -97,29 +106,43 @@ class LoginForm extends Component {
 
     return (
       <div className="login-form-container">
-        <img
-          src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
-          className="login-website-logo-mobile-img"
-          alt="website logo"
-        />
+        <h2 className='login-website-logo-mobile-img text-3xl font-bold mb-6 text-center bg-gradient-to-r from-blue-400 to-emerald-500 text-transparent bg-clip-text'>
+				    Welcome Back
+			  </h2>
         <img
           src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-login-img.png"
           className="login-img"
           alt="website login"
-        />
-        <form className="form-container" onSubmit={this.submitForm}>
-          <img
-            src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
-            className="login-website-logo-desktop-img"
-            alt="website logo"
           />
-          <div className="input-container">{this.renderUsernameField()}</div>
-          <div className="input-container">{this.renderPasswordField()}</div>
-          <button type="submit" className="login-button">
-            Login
-          </button>
-          {showSubmitError && <p className="error-message">*{errorMsg}</p>}
-        </form>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <form className="form-container" onSubmit={this.submitForm}>
+              <h2 className='login-website-logo-desktop-img text-3xl font-bold mb-6 text-center bg-gradient-to-r from-blue-400 to-emerald-500 text-transparent bg-clip-text'>
+				        Welcome Back
+			        </h2>
+              <div className="input-container">{this.renderUsernameField()}</div>
+              <div className="input-container">{this.renderPasswordField()}</div>
+              <motion.button
+              whileHover={{scale:1.02}}
+              whileTap={{scale:0.98}}
+              type="submit" 
+              className="login-button bg-gradient-to-r from-blue-400 to-emerald-500">
+                Login
+              </motion.button>
+              {showSubmitError && <p className="error-message">*{errorMsg}</p>}
+            </form>
+            <div className='text-center'>
+              <p className='text-sm text-black mt-3'>
+				    	Don't have an account? 
+				    	<Link to='/signup' className='text-green-400 font-bold hover:underline ml-1'>
+				    		Sign up
+				    	</Link>
+              </p>
+            </div>
+          </motion.div>
       </div>
     )
   }

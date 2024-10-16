@@ -1,4 +1,5 @@
-.login-form-container {
+.signup-form-container {
+  /* background-image: linear-gradient(to right, rgb(90, 167, 219) , rgb(138, 235, 138)); */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,30 +11,30 @@
 }
 
 @media screen and (min-width: 992px) {
-  .login-form-container {
+  .signup-form-container {
     flex-direction: row;
     justify-content: space-around;
   }
 }
 
-.login-website-logo-mobile-img {
+.signup-website-logo-mobile-img {
   width: 250px;
   margin-top: 50px;
   margin-bottom: 35px;
 }
 
 @media screen and (min-width: 992px) {
-  .login-website-logo-mobile-img {
+  .signup-website-logo-mobile-img {
     display: none;
   }
 }
 
-.login-img {
+.signup-img {
   width: 278px;
 }
 
 @media screen and (min-width: 992px) {
-  .login-img {
+  .signup-img {
     width: 60%;
     max-width: 524px;
     flex-shrink: 1;
@@ -41,12 +42,12 @@
   }
 }
 
-.login-website-logo-desktop-img {
+.signup-website-logo-desktop-img {
   width: 250px;
 }
 
 @media screen and (max-width: 991px) {
-  .login-website-logo-desktop-img {
+  .signup-website-logo-desktop-img {
     display: none;
   }
 }
@@ -110,7 +111,7 @@
   outline: none;
 }
 
-.login-button {
+.signup-button {
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
   font-size: 14px;

@@ -6,7 +6,11 @@
   display: flex;
   flex-direction: column;
 }
-
+@media screen and (max-width: 768px) {
+  .payments-container {
+    width: 90%;
+  }
+}
 .payments-heading {
   margin: 0;
   font-family: 'Poppins';
@@ -56,7 +60,6 @@
 }
 
 .confirm-order-button {
-  background-color: #0b69ff;
   padding: 12px 24px;
   border: none;
   outline: none;

@@ -74,7 +74,7 @@ const Payment = () => {
   )
 
   return (
-    <div className="payments-container">
+    <div className="payments-container mx-3">
       {isOrderPlaced ? (
         <p className="success-message">
           Your order has been placed successfully
@@ -92,7 +92,7 @@ const Payment = () => {
           <button
             disabled={paymentMethod === ''}
             type="button"
-            className="confirm-order-button"
+            className="confirm-order-button bg-gradient-to-r from-blue-400 to-emerald-500"
             onClick={onPlaceOrder}
           >
             Confirm Order
